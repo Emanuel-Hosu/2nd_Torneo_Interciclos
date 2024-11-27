@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Arvo';
+    src: url('/path/to/arvo-regular.woff2') format('woff2'),
+         url('/path/to/arvo-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Arvo';
+    src: url('/path/to/arvo-bold.woff2') format('woff2'),
+         url('/path/to/arvo-bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Arvo';
+    src: url('/path/to/arvo-regular-italic.woff2') format('woff2'),
+         url('/path/to/arvo-regular-italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Arvo';
+    src: url('/path/to/arvo-bold-italic.woff2') format('woff2'),
+         url('/path/to/arvo-bold-italic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  @font-face {
+     font-family: 'Josefin Sans';
+     src: url('/path/to/josefin-sans-regular.woff2') format('woff2'),
+          url('/path/to/josefin-sans-regular.woff') format('woff');
+     font-weight: 400;
+     font-style: normal;
+   }
+   
+   @font-face {
+     font-family: 'Josefin Sans';
+     src: url('/path/to/josefin-sans-bold.woff2') format('woff2'),
+          url('/path/to/josefin-sans-bold.woff') format('woff');
+     font-weight: 700;
+     font-style: normal;
+   }
+   
