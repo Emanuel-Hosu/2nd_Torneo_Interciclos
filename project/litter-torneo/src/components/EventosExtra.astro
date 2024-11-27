@@ -1,18 +1,105 @@
 ---
 const images = [
-  'dragon.jpg', 
-  'rocket.jpg', 
-  'fifa.webp', 
-  'lol.jpeg'
+  'brawl.png', 
+  'mario.webp',
 ];
 ---
-
 <div class="bg-white/60 shadow-md my-4 p-4 rounded-lg w-full text-lime-600">
     <h1 class="font-arvo font-bold font-staatliches text-4xl">
         02. Eventos extra
     </h1>
 
-    <div class="justify-start mt-4 text-black">
+    <div class="justify-start my-4 text-black">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper nunc vitae feugiat iaculis.
     </div>
+
+    <div class="relative mx-auto rounded-lg w-full md:h-[800px] overflow-hidden">
+        <!-- Contenedor de imágenes -->
+        <div class="flex transition-transform duration-500 ease-in-out" id="carousel2">
+          {images.map((image, index) => (
+            <div class="flex-shrink-0 w-full carousel-item2">
+              <img src={image} alt={`Imagen ${index + 1}`} class="w-full h-auto" />
+            </div>
+          ))}
+        </div>
+        
+        <!-- Botones de navegación -->
+        <button id="prevButton2" class="top-1/2 left-4 absolute bg-black bg-opacity-50 p-3 rounded-full text-white transform -translate-y-1/2">
+          ‹
+        </button>
+        <button id="nextButton2" class="top-1/2 right-4 absolute bg-black bg-opacity-50 p-3 rounded-full text-white transform -translate-y-1/2">
+          ›
+        </button>
+    </div>
+      
 </div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const carousel = document.getElementById('carousel2');
+      const prevButton = document.getElementById('prevButton2');
+      const nextButton = document.getElementById('nextButton2');
+      const slides = document.querySelectorAll('.carousel-item2');
+    
+      let currentIndex = 0;
+      let autoPlayInterval: ReturnType<typeof setInterval> | null = null;
+    
+      function showSlide(index: number) {
+        // Asegurarse de que el índice esté dentro del rango
+        currentIndex = (index + slides.length) % slides.length;
+    
+        // Mover el carrusel
+        if (carousel) {
+          carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+      }
+    
+      // Evento para botón siguiente
+      if (nextButton) {
+        nextButton.addEventListener('click', () => {
+          // Detener el autoplay cuando se hace clic en el botón
+          if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
+          }
+          showSlide((currentIndex + 1) % slides.length);
+        });
+      }
+    
+      // Evento para botón anterior
+      if (prevButton) {
+        prevButton.addEventListener('click', () => {
+          // Detener el autoplay cuando se hace clic en el botón
+          if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
+          }
+          showSlide((currentIndex + slides.length - 1) % slides.length);
+        });
+      }
+    
+      // Función de autoplay
+      function autoPlay() {
+        autoPlayInterval = setInterval(() => {
+          showSlide((currentIndex + 1) % slides.length);
+        }, 4000); // Cambia cada 2 segundos
+      }
+    
+      // Inicializar el carrusel y comenzar el autoplay
+      showSlide(0);
+      autoPlay();
+    });
+    </script>
+    
+    <style>
+      #carousel {
+        width: 100%;
+        display: flex;
+      }
+    
+      .carousel-item {
+        min-width: 100%;
+        transition: transform 0.5s ease-in-out;
+      }
+    </style>
