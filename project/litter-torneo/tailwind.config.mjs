@@ -4,8 +4,8 @@ export default {
 	theme: {
 	  extend: {
 		fontFamily: {
-		  josefin: ['Josefin Sans', 'sans-serif'], // Añadimos Josefin Sans
-		  arvo: ['Arvo', 'serif'], // También dejamos Arvo configurado
+			niramit: ['Niramit', 'serif'],
+			staatliches: ['Staatliches', 'sans-serif'],
 		},
 	  },
 	},

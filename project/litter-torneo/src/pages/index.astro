@@ -2,7 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Header from '../components/Header.astro';
+import SobreElToreno from '../components/SobreElTorneo.astro';
 import Carrusel from '../components/Carrusel.astro'
+import EventosExtra from '../components/EventosExtra.astro';
 ---
 
 <Layout title="Litter Torneo">
@@ -17,7 +19,12 @@ import Carrusel from '../components/Carrusel.astro'
 		<Carrusel></Carrusel>
 	</section>
 
-	<article class="px-32">
-
+	<div class="my-4 font-arvo font-bold font-staatliches text-5xl text-center">
+		<h1 class="text-lime-800">Litter Torneo</h1>
+	</div>
+	
+	<article class="px-8 md:px-32">
+		<SobreElToreno></SobreElToreno>
+		<EventosExtra/>
 	</article>
 </Layout>
