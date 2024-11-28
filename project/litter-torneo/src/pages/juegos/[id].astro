@@ -1,8 +1,8 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import LayoutJuegos from "../../layouts/LayoutJuegos.astro";
 
 export async function getStaticPaths() {
 	const juegos = await getCollection("juegos");
@@ -16,8 +16,10 @@ const { juego } = Astro.props as { juego: CollectionEntry<"juegos"> };
 const { Content } = await juego.render(); 
 ---
 
-<Layout title={juego.data.title}>
-	<Header />
+<LayoutJuegos title={juego.data.title}>
+	<div>
+		<Header />
+	</div>
 	<div class="grid grid-cols-1 xl:grid-cols-4">
 		<div class="col-span-1">
 			<div class="bg-white/60 shadow-md mx-12 my-4 mt-4 rounded-lg xl:h-full text-black">
@@ -30,7 +32,25 @@ const { Content } = await juego.render();
 			
 			<div class="bg-white/60 shadow-md mx-12 my-4 mt-4 p-4 rounded-lg text-black">
 				<div class="mt-6 font-arvo font-bold font-staatliches text-5xl text-center">
-					<h1 class="text-lime-800">{juego.data.title}</h1>
+					<h1 class={`
+						${juego.data.title.toLowerCase() === 'league of legends' 
+							? 'text-pink-400' 
+							: 'text-black'
+						}
+						${juego.data.title.toLowerCase() === 'dragon ball sparking zero!' 
+							? 'text-blue-600'
+							: 'text-black'
+						}
+						${juego.data.title.toLowerCase() === 'fifa' 
+							? 'text-black' 
+							: 'text-black'
+						}
+						${juego.data.title.toLowerCase() === 'rocket league' 
+							? 'text-blue-700' 
+							: 'text-black'
+						}
+							
+					`}>{juego.data.title}</h1>
 				</div>
 				<div class="p-4 rounded-lg">
 					<h1 class="font-arvo font-bold font-staatliches text-xl">Info</h1>
@@ -45,43 +65,64 @@ const { Content } = await juego.render();
 				</div>
 				
 			</div>
-			<div class="mt-6 font-arvo font-bold font-staatliches text-5xl text-center">
-				<h1 class="text-lime-800">Jugadores</h1>
-			</div>
-			<div class="gap-4 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 mx-12 my-4">
-				<!--Aqui hay que mapear a los jugadores, hago unos de ejemplo, borrar luego -Belz -->
-							<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
-								<h1 class="font-bold text-2xl break-words">Apodo87576854678547648567</h1>
-								<p class="text-black">Curso</p>
-							</div>
-							<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
-								<h1 class="font-bold text-2xl">Apodo</h1>
-								<p class="text-black">Curso</p>
-							</div>
-							<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
-								<h1 class="font-bold text-2xl">Apodo</h1>
-								<p class="text-black">Curso</p>
-							</div>
-							<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
-								<h1 class="font-bold text-2xl">Apodo</h1>
-								<p class="text-black">Curso</p>
-							</div>
-							<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
-								<h1 class="font-bold text-2xl">Apodo</h1>
-								<p class="text-black">Curso</p>
-							</div>
-							<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
-								<h1 class="font-bold text-2xl">Apodo</h1>
-								<p class="text-black">Curso</p>
-							</div>
-							<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
-								<h1 class="font-bold text-2xl">Apodo</h1>
-								<p class="text-black">Curso</p>
-							</div>
-							<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
-								<h1 class="font-bold text-2xl">Apodo</h1>
-								<p class="text-black">Curso</p>
-							</div>
+
+			<div class="bg-white/60 shadow-md mx-12 my-4 mt-4 p-4 rounded-lg text-black">
+				<div class="mt-6 font-arvo font-bold font-staatliches text-5xl text-center">
+					<h1 class={`
+						${juego.data.title.toLowerCase() === 'league of legends' 
+							? 'text-pink-400' 
+							: 'text-black'
+						}
+						${juego.data.title.toLowerCase() === 'dragon ball sparking zero!' 
+							? 'text-blue-600'
+							: 'text-black'
+						}
+						${juego.data.title.toLowerCase() === 'fifa' 
+							? 'text-black' 
+							: 'text-black'
+						}
+						${juego.data.title.toLowerCase() === 'rocket league' 
+							? 'text-blue-700' 
+							: 'text-black'
+						}
+							
+					`}>Jugadores</h1>
+				</div>
+				<div class="gap-4 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 mx-12 my-4">
+					<!--Aqui hay que mapear a los jugadores, hago unos de ejemplo, borrar luego -Belz -->
+								<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
+									<h1 class="font-bold text-2xl">Nickname</h1>
+									<p class="text-black">Curso</p>
+								</div>
+								<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
+									<h1 class="font-bold text-2xl">Nickname</h1>
+									<p class="text-black">Curso</p>
+								</div>
+								<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
+									<h1 class="font-bold text-2xl">Nickname</h1>
+									<p class="text-black">Curso</p>
+								</div>
+								<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
+									<h1 class="font-bold text-2xl">Nickname</h1>
+									<p class="text-black">Curso</p>
+								</div>
+								<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
+									<h1 class="font-bold text-2xl">Nickname</h1>
+									<p class="text-black">Curso</p>
+								</div>
+								<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
+									<h1 class="font-bold text-2xl">Nickname</h1>
+									<p class="text-black">Curso</p>
+								</div>
+								<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
+									<h1 class="font-bold text-2xl">Nickname</h1>
+									<p class="text-black">Curso</p>
+								</div>
+								<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
+									<h1 class="font-bold text-2xl">Nickname</h1>
+									<p class="text-black">Curso</p>
+								</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -89,4 +130,4 @@ const { Content } = await juego.render();
 	
 	<Footer />
 	
-</Layout>
+</LayoutJuegos>

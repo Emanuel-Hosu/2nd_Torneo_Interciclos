@@ -1,0 +1,55 @@
+---
+import ViewTransitions from 'astro/components/ViewTransitions.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Niramit:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Staatliches&display=swap" rel="stylesheet">
+		<ViewTransitions />
+
+		<title>{title}</title>
+
+		
+	</head>
+	<body 
+		class={`relative font-niramit pt-4
+			min-h-screen 
+			${title.toLowerCase() === 'league of legends' 
+				? 'bg-gradient-to-br from-cyan-200 to-pink-300 text-white' 
+				: 'bg-white'
+			}
+            ${title.toLowerCase() === 'dragon ball sparking zero!' 
+				? 'bg-gradient-to-br from-cyan-100 to-blue-700 text-white' 
+				: 'bg-white'
+			}
+            ${title.toLowerCase() === 'fifa' 
+				? 'bg-gradient-to-br from-yellow-100 to-neutral-500 text-white' 
+				: 'bg-white'
+			}
+            ${title.toLowerCase() === 'rocket league' 
+				? 'bg-gradient-to-br from-cyan-500 to-green-700 text-white' 
+				: 'bg-white'
+			}
+                
+		`}
+	>
+		<main class="min-h-screen">
+			<slot />
+		</main>
+	</body>
+</html>

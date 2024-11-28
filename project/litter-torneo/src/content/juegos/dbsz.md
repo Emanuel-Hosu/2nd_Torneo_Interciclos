@@ -5,9 +5,6 @@ mode: 1vs1
 img: dragon.jpg
 imgv: DGZ/dgz1.png
 imgh: DGZ/dgz2.png
-need: Para jugar bien se requiere...
+need: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim arcu nec pretium tincidunt.
 ---
-
-Dragon Ball Sparking ZERO! es un juego de peleas
-
-Se va a jugar en la modalidad de 1vs1 en el aula de bla bla bla
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim arcu nec pretium tincidunt. Vivamus et massa sed metus mollis pretium et et erat. Mauris rhoncus malesuada nulla vel ornare. Pellentesque mattis efficitur dictum. Ut interdum vehicula ligula, ac rutrum lectus tristique quis. Praesent tincidunt, justo non bibendum molestie, ipsum ante dignissim eros, et ultricies velit felis ac mauris.
