@@ -1,0 +1,92 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+	const juegos = await getCollection("juegos");
+	return juegos.map((juego: CollectionEntry<"juegos">) => ({
+		params: { id: juego.slug },
+		props: { juego },
+	}));
+}
+
+const { juego } = Astro.props as { juego: CollectionEntry<"juegos"> };
+const { Content } = await juego.render(); 
+---
+
+<Layout title={juego.data.title}>
+	<Header />
+	<div class="grid grid-cols-1 xl:grid-cols-4">
+		<div class="col-span-1">
+			<div class="bg-white/60 shadow-md mx-12 my-4 mt-4 rounded-lg xl:h-full text-black">
+				<img src={`/${juego.data.imgv}`} class="xl:inline hidden rounded-lg w-full h-full object-cover">
+				<img src={`/${juego.data.imgh}`} class="inline xl:hidden rounded-lg">
+			</div>
+		</div>
+
+		<div class="col-span-3">
+			
+			<div class="bg-white/60 shadow-md mx-12 my-4 mt-4 p-4 rounded-lg text-black">
+				<div class="mt-6 font-arvo font-bold font-staatliches text-5xl text-center">
+					<h1 class="text-lime-800">{juego.data.title}</h1>
+				</div>
+				<div class="p-4 rounded-lg">
+					<h1 class="font-arvo font-bold font-staatliches text-xl">Info</h1>
+					<div class="">
+						<Content />
+					</div>
+					
+				</div>
+				<div class="bg-red-100 p-4 rounded-lg">
+					<h1 class="font-arvo font-bold font-staatliches text-red-600 text-xl"> Requisitos </h1>
+					<p class="text-red-900">{juego.data.need}</p>
+				</div>
+				
+			</div>
+			<div class="mt-6 font-arvo font-bold font-staatliches text-5xl text-center">
+				<h1 class="text-lime-800">Jugadores</h1>
+			</div>
+			<div class="gap-4 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 mx-12 my-4">
+				<!--Aqui hay que mapear a los jugadores, hago unos de ejemplo, borrar luego -Belz -->
+							<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
+								<h1 class="font-bold text-2xl break-words">Apodo87576854678547648567</h1>
+								<p class="text-black">Curso</p>
+							</div>
+							<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
+								<h1 class="font-bold text-2xl">Apodo</h1>
+								<p class="text-black">Curso</p>
+							</div>
+							<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
+								<h1 class="font-bold text-2xl">Apodo</h1>
+								<p class="text-black">Curso</p>
+							</div>
+							<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
+								<h1 class="font-bold text-2xl">Apodo</h1>
+								<p class="text-black">Curso</p>
+							</div>
+							<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
+								<h1 class="font-bold text-2xl">Apodo</h1>
+								<p class="text-black">Curso</p>
+							</div>
+							<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
+								<h1 class="font-bold text-2xl">Apodo</h1>
+								<p class="text-black">Curso</p>
+							</div>
+							<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
+								<h1 class="font-bold text-2xl">Apodo</h1>
+								<p class="text-black">Curso</p>
+							</div>
+							<div class="bg-white/60 shadow-md p-4 rounded-lg text-lime-600">
+								<h1 class="font-bold text-2xl">Apodo</h1>
+								<p class="text-black">Curso</p>
+							</div>
+			</div>
+		</div>
+	</div>
+		
+	
+	<Footer />
+	
+</Layout>
