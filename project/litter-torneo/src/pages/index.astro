@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import SobreElToreno from '../components/SobreElTorneo.astro';
 import Carrusel from '../components/Carrusel.astro'
 import EventosExtra from '../components/EventosExtra.astro';
+import Footer from '../components/Footer.astro';
 import Inscripcion from '../components/Inscripcion.astro';
 ---
 
@@ -24,9 +25,14 @@ import Inscripcion from '../components/Inscripcion.astro';
 		<h1 class="text-lime-800">Litter Torneo</h1>
 	</div>
 	
-	<article class="px-8 md:px-32">
+	<article class="gap-4 md:grid grid-cols-2 mt-4 px-8 md:px-32">
 		<SobreElToreno></SobreElToreno>
-		<EventosExtra/>
 		<Inscripcion/>
+		<div class="col-span-2">
+			<EventosExtra/>
+		</div>
 	</article>
+	
+
+	<Footer></Footer>
 </Layout>
