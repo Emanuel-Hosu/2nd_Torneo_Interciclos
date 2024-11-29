@@ -1,0 +1,65 @@
+---
+import ViewTransitions from 'astro/components/ViewTransitions.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Niramit:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Staatliches&display=swap" rel="stylesheet">
+		<ViewTransitions />
+
+		<title>{title}</title>
+
+		
+	</head>
+	<body>
+		<main class="min-h-screen">
+			<slot />
+		</main>
+
+        <script>
+            // Define una interfaz para describir el tipo de datos que esperas
+            interface Datos {
+                // Agrega aquí las propiedades esperadas en 'datos'
+                [key: string]: any; // Si no conoces las propiedades exactas, puedes usar esto temporalmente
+            }
+
+            fetch('https://script.googleusercontent.com/a/macros/colegiolitterator.com/echo?user_content_key=odtldbdrYQbw94RCJhhiHigcTFomO25iqdWW_SXgkHZvOxmyl5Y15Um0TlhC7LuuO354Oh5IXECfc8xTuKfixcFcs3CEWq_6OJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMi80zadyHLKBQcMZTTj8z7Iv82U9_elSZEYLYKFs9pIdLhyHCd5hHa1qkMsXZOxsBtv68oDXYyUHkT_Rro7QT6NbyKm3rkARHYBJ3SNfuGPYsdqCBMkB_1DEN4iRADXsWk3DwbGNpNI71gQx8oAdV8kTW8i-e4i7lncuLlDTytQsu0YHUFGrgc7YDjsOSvy5mne1XwzDA-EP0eyVqLPyWEhppzBkSBKgHK8DWiGRoRnU&lib=Mc7pr-Q_-1grpYrEAztbvjVBX5cZadp3Y')
+            .then(response => {
+                if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data: Datos) => {
+                //console.log(data);
+                getDatos(data.data);
+            })
+            .catch(error => {
+                console.error('Error en la solicitud:', error);
+            });
+
+            function getDatos(datos: Datos): void {
+                //console.log('Datos recibidos:', datos);
+                for (let i in datos) {
+                    console.log(datos[i][4]);
+                }
+            }
+
+        </script>
+	</body>
+</html>
