@@ -7,6 +7,7 @@ import Carrusel from '../components/Carrusel.astro'
 import EventosExtra from '../components/EventosExtra.astro';
 import Footer from '../components/Footer.astro';
 import Inscripcion from '../components/Inscripcion.astro';
+import Button from '../components/Button.astro';
 ---
 
 <Layout title="Litter Torneo">
@@ -21,13 +22,17 @@ import Inscripcion from '../components/Inscripcion.astro';
 		<Carrusel></Carrusel>
 	</section>
 
-	<div class="my-4 font-arvo font-bold font-staatliches text-5xl text-center">
-		<h1 class="text-lime-800">Litter Torneo</h1>
+	<div class="my-6 font-arvo font-bold font-staatliches text-5xl text-center">
+		<h1 class="text-lime-800">|| Torneo E-Sports Interciclos</h1>
 	</div>
-	
+
+	<div class="flex justify-center items-center my-6">
+		<Button>INCRIBETE AQUí</Button>
+	</div>
+
 	<article class="gap-4 md:grid grid-cols-2 mt-4 px-8 md:px-32">
-		<SobreElToreno></SobreElToreno>
 		<Inscripcion/>
+		<SobreElToreno></SobreElToreno>
 		<div class="col-span-2">
 			<EventosExtra/>
 		</div>
