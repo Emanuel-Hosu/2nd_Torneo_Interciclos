@@ -1,12 +1,27 @@
-<div class="flex justify-between px-2 md:px-32">
-    <div class="flex gap-8 text-black self-center">
-        <a href="/" class="hover:text-green-600 cursor-pointer"><span class="md:inline hidden">01.</span> Inicio</a>
-        <a href="/juegos" class="hover:text-green-600 cursor-pointer"><span class="md:inline hidden">02.</span> Videojuegos</a>
-    </div>
+<div class="mx-auto px-4 md:px-8 py-4 container">
+    <nav class="flex justify-between items-center">
+        <div class="flex items-center space-x-6">
+            <a href="/" class="flex items-center text-gray-800 hover:text-green-600 transition-colors duration-300 group">
+                <span class="md:inline hidden opacity-0 group-hover:opacity-100 mr-2 text-green-600 transition-opacity duration-300">
+                    01.
+                </span>
+                <span class="font-medium">Inicio</span>
+            </a>
+            <a href="/juegos" class="flex items-center text-gray-800 hover:text-green-600 transition-colors duration-300 group">
+                <span class="md:inline hidden opacity-0 group-hover:opacity-100 mr-2 text-green-600 transition-opacity duration-300">
+                    02.
+                </span>
+                <span class="font-medium">Videojuegos</span>
+            </a>
+        </div>
 
-    <div>
-        <img class="w-44 md:w-48 h-auto" src="https://colegiolitterator.com/wp-content/uploads/2023/12/ColegioLitterator.svg" alt="">
-    </div>
+        <div class="flex items-center">
+            <img 
+                src="https://colegiolitterator.com/wp-content/uploads/2023/12/ColegioLitterator.svg" 
+                alt="Logo Colegio Litterator" 
+                class="w-36 md:w-44 h-auto transition-transform duration-300 hover:scale-105"
+            >
+        </div>
+    </nav>
 </div>
-<hr class="border-0 bg-gradient-to-r from-green-100 via-green-300 to-green-100 shadow-xl mt-2 w-full h-1">
-
+<hr class="bg-gradient-to-r from-green-100 via-green-300 to-green-100 shadow-sm w-full h-1">
