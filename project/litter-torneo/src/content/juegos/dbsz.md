@@ -1,10 +1,10 @@
 ---
-title: Dragon Ball Sparking ZERO!
+title: Dragon Ball Sparking Zero
 platform: PC / PS4
 mode: 1vs1
 img: dragon.jpg
 imgv: DGZ/dgz1.png
 imgh: DGZ/dgz2.png
-need: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim arcu nec pretium tincidunt.
+need: Para una mejor experiencia, tráete tu propio mando.
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim arcu nec pretium tincidunt. Vivamus et massa sed metus mollis pretium et et erat. Mauris rhoncus malesuada nulla vel ornare. Pellentesque mattis efficitur dictum. Ut interdum vehicula ligula, ac rutrum lectus tristique quis. Praesent tincidunt, justo non bibendum molestie, ipsum ante dignissim eros, et ultricies velit felis ac mauris.
+El torneo se llevará a cabo en formato 1 vs 1, permitiendo a los jugadores enfrentarse cara a cara en emocionantes batallas. Cada partida será una prueba de habilidad y estrategia. El evento tendrá lugar en la sala de audiovisuales, un espacio perfecto para disfrutar de la competencia en un ambiente cómodo y bien equipado.

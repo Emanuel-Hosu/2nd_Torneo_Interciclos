@@ -5,6 +5,6 @@ mode: 2vs2
 img: rocket.jpg
 imgv: rocket/rocket1.png
 imgh: rocket/rocket2.png
-need: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim arcu nec pretium tincidunt.
+need: Para una mejor experiencia, tráete tu propio mando.
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim arcu nec pretium tincidunt. Vivamus et massa sed metus mollis pretium et et erat. Mauris rhoncus malesuada nulla vel ornare. Pellentesque mattis efficitur dictum. Ut interdum vehicula ligula, ac rutrum lectus tristique quis. Praesent tincidunt, justo non bibendum molestie, ipsum ante dignissim eros, et ultricies velit felis ac mauris.
+El torneo se jugará en formato 2 vs 2, donde los equipos competirán juntos para demostrar su coordinación y habilidad en emocionantes enfrentamientos. Cada partida pondrá a prueba el trabajo en equipo y la estrategia. El evento se llevará a cabo en la sala de audiovisuales, un espacio ideal para disfrutar de la acción y seguir la competencia de cerca.
