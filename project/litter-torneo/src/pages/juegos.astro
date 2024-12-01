@@ -19,7 +19,7 @@ const juegos = await getCollection("juegos");
             juegos.map((juego:any) => (
                 <div class="bg-white/60 shadow-md my-4 p-4 rounded-lg w-full text-lime-600 transform hover:scale-105 duration-200">
                     <a href={`/juegos/${juego.slug}`}>
-                        <div class="gap-4 grid grid-cols-2 md:grid-cols-1">
+                        <div class="gap-4 grid grid-cols-1">
                             <div>
                                 <img src={`/${juego.data.img}`} alt="" class="rounded-lg">
                             </div>
