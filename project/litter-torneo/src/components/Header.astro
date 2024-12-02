@@ -2,26 +2,51 @@
     <nav class="flex justify-between items-center">
         <div class="flex items-center space-x-6">
             <a href="/" class="flex items-center text-gray-800 hover:text-green-600 transition-colors duration-300 group">
-                <span class="md:inline hidden opacity-0 group-hover:opacity-100 mr-2 text-green-600 transition-opacity duration-300">
+                <span class="md:inline hidden mr-2">
                     01.
                 </span>
                 <span class="font-medium">Inicio</span>
             </a>
             <a href="/juegos" class="flex items-center text-gray-800 hover:text-green-600 transition-colors duration-300 group">
-                <span class="md:inline hidden opacity-0 group-hover:opacity-100 mr-2 text-green-600 transition-opacity duration-300">
+                <span class="md:inline hidden mr-2">
                     02.
                 </span>
                 <span class="font-medium">Videojuegos</span>
             </a>
         </div>
 
-        <div class="flex items-center">
-            <img 
-                src="https://colegiolitterator.com/wp-content/uploads/2023/12/ColegioLitterator.svg" 
-                alt="Logo Colegio Litterator" 
-                class="w-36 md:w-44 h-auto transition-transform duration-300 hover:scale-105"
-            >
-        </div>
+        <a href="https://colegiolitterator.com/" target="_blank">
+            <div class="flex items-center">
+                <img 
+                    src="https://colegiolitterator.com/wp-content/uploads/2023/12/ColegioLitterator.svg" 
+                    alt="Logo Colegio Litterator" 
+                    class="w-36 md:w-44 h-auto transition-transform duration-300 hover:scale-105"
+                >
+            </div>
+        </a>
     </nav>
 </div>
 <hr class="bg-gradient-to-r from-green-100 via-green-300 to-green-100 shadow-sm w-full h-1">
+
+<script>
+    // Forzar recarga completa al navegar (excepto para enlaces con target="_blank")
+    window.addEventListener('load', () => {
+      const links = document.querySelectorAll('a[href]');
+      links.forEach(link => {
+        link.addEventListener('click', (event) => {
+          const href = link.getAttribute('href');
+          const target = link.getAttribute('target');
+          // Excluir enlaces con target="_blank" o anclajes internos
+          if (target === "_blank" || (href && href.startsWith('#'))) {
+            return; // Dejar que el comportamiento predeterminado ocurra
+          }
+          if (href) {
+            event.preventDefault();
+            window.location.href = href; // Forzar recarga completa
+          }
+        });
+      });
+    });
+</script>
+
+  
