@@ -1,4 +1,4 @@
-# Litter_Torneo_con_React
+# Litter_Torneo_II
 
 Página web creada para el II Torneo Interciclos del Colegio Litterator.
 
@@ -14,7 +14,7 @@ Página web creada para el II Torneo Interciclos del Colegio Litterator.
 git clone https://github.com/Emanuel-Hosu/Litter_Torneo_con_React.git
 
 # Accede a la carpeta
-cd Litter_Torneo_con_React/project/litter-torneo
+cd Litter_Torneo_II/project/litter-torneo
 
 # Instala las dependencias
 npm install
